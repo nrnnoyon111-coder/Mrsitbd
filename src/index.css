@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f5f7;
+  --glass-bg: rgba(255, 255, 255, 0.22);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: rgba(0, 0, 0, 0.05);
+  --glass-highlight: rgba(255, 255, 255, 0.9);
+  --text-main: #1d1d1f;
+  --text-dim: #86868b;
+  --input-bg: rgba(255, 255, 255, 0.7);
+  --accent: #0071e3;
+  --accent-glow: rgba(0, 113, 227, 0.2);
+  --success: #34c759;
+  --danger: #ff3b30;
+  --warning: #ff9f0a;
+}
+
+.dark, [data-theme="dark"] {
+  --bg: #000000;
+  --glass-bg: rgba(30, 30, 35, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.6);
+  --glass-highlight: rgba(255, 255, 255, 0.25);
+  --text-main: #f2f2f7;
+  --text-dim: #aeaeae;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --accent: #0a84ff;
+  --accent-glow: rgba(10, 132, 255, 0.4);
+  --success: #32d74b;
+  --danger: #ff453a;
+  --warning: #ff9f0a;
+}
+
+/* Typography Helpers */
+.font-syncopate {
+  font-family: 'Syncopate', sans-serif;
+  letter-spacing: 0.15em;
+}
+
+.font-cabinet {
+  font-family: 'Cabinet Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Orbiting Blobs Animation */
+@keyframes orbit-1 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  33% { transform: translate(110px, 90px) rotate(120deg) scale(1.12); }
+  66% { transform: translate(-70px, 130px) rotate(240deg) scale(0.92); }
+  100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+}
+
+@keyframes orbit-2 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  33% { transform: translate(-120px, -80px) rotate(-120deg) scale(0.88); }
+  66% { transform: translate(80px, -90px) rotate(-240deg) scale(1.15); }
+  100% { transform: translate(0, 0) rotate(-360deg) scale(1); }
+}
+
+@keyframes orbit-3 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1.05); }
+  33% { transform: translate(70px, -110px) rotate(120deg) scale(0.9); }
+  66% { transform: translate(-90px, 60px) rotate(240deg) scale(1.08); }
+  100% { transform: translate(0, 0) rotate(360deg) scale(1.05); }
+}
+
+.animate-orbit-blob1 {
+  animation: orbit-1 22s infinite linear;
+}
+
+.animate-orbit-blob2 {
+  animation: orbit-2 26s infinite linear;
+}
+
+.animate-orbit-blob3 {
+  animation: orbit-3 30s infinite linear;
+}
+
+/* Glass Utility Classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 var(--glass-shadow);
+}
+
+.glass-input {
+  background: var(--input-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Liquid Leader Card Hover & Glow */
+.liquid-leader-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--glass-border);
+}
+
+.liquid-leader-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.liquid-leader-card.active-glow {
+  border-color: var(--accent) !important;
+  transform: scale(1.015);
+  box-shadow: 0 0 25px var(--accent-glow) !important;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "MRS Fast Solution - Industrial Circuit Repair & Sales",
+  "description": "Complete A-Z business management, industrial electronics circuit repairing, parts sales, inventory, accounts and instant public job tracking system for MRS Fast Solution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
